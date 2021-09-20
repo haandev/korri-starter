@@ -1,8 +1,8 @@
 {
-  "name": "körri-backend",
+  "name": "korri-starter",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/haandev/yunniq-backend.git",
+  "repository": "https://github.com/haandev/korri-starter.git",
   "author": "haandev",
   "scripts": {
     "start": "nodemon -r dotenv/config index.js",
