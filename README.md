@@ -17,6 +17,7 @@ for eg.:
 -model,controller,router,middleware abstraction  
 
 roadmap:  
+mysql admin ui  
 https, ssl support  
 vhost, subdomain support  
 automatic swagger generation  
