@@ -1,4 +1,18 @@
-# körri-backend
+# körri-backend  
+
+-features:
+
+-automatic routing from file system  "/routers" directory
+for eg.:  
+  you have a file /routers/auth.js  
+  two diffrent route defined in this file   
+  /login, /user  
+  main app will use this routes as /auth/login, /auth/user
+  zero config
+
+-jwt and middleware support  
+-mysql support with sequelize  
+-model,controller,router,middleware abstraction  
 
 roadmap:  
 https, ssl support  
