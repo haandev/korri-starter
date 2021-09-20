@@ -16,7 +16,9 @@ for eg.:
 -mysql support with sequelize  
 -model,controller,router,middleware abstraction  
 
-roadmap:  
+roadmap: 
+api version, path prefix  
+case conversion middleware
 typescript support  
 webpack, bundle  
 mysql admin ui  
