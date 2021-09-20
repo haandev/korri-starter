@@ -1,5 +1,7 @@
 # körri-backend  
 
+this is not a fork of any project. please support.
+
 -features:
 
 -automatic routing from file system  "/routers" directory
