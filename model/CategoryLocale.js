@@ -1,24 +1,20 @@
 const { sequelize, DataTypes } = require("./../init-connection");
 
-const Company = require("./Company");
-
-const Table = sequelize.define("table", {
+const CategoryLocale = sequelize.define("categoryLocale", {
   id: {
     autoIncrement: true,
     type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     primaryKey: true,
   },
-  qrcode: {
+  title: {
     type: DataTypes.TEXT,
-    allowNull: true,
+    allowNull: false,
   },
-  tableName: {
+  locale: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
 });
 
-Table.belongsTo(Company);
-
-module.exports = Table;
+module.exports = CategoryLocale;

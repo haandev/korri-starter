@@ -13,43 +13,43 @@ const Company = sequelize.define("company", {
   },
   contact: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   logo: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   css: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   facebook: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   twitter: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   instagram: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   youtube: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   garson: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   vale: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   sikayet: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
 });
 

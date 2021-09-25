@@ -37,7 +37,15 @@ const getById = async (request, response) => {
 
 const create = async (request, response) => {
   try {
-    const result = await Table.create({ ...request.body });
+    const {
+      body:{
+        tableName
+      },
+      authUser : {
+        companyId
+      }
+    } = request
+    const result = await Table.create({ tableName,companyId });
     response.send(result);
   } catch (error) {
     response.status(500).send("Server error");
@@ -59,7 +67,6 @@ const update = async (request, response) => {
 const destroy = async (request, response) => {
   try {
     const { id } = request.params;
-    console.log(id);
     await Table.destroy({ where: { id: parseInt(id) } });
     response.sendStatus(200);
   } catch (error) {

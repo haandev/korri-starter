@@ -1,8 +1,13 @@
-const Company = require("./../model/Category");
-const Category = require("./../model/Company");
+const Company = require("./../model/Company");
+const Category = require("./../model/Category");
 
 const getAll = async (request, response) => {
   try {
+    const {
+      authUser : {
+        companyId
+      }
+    } = request
     response.send(
       await Category.findAll({
         include: [
@@ -10,6 +15,7 @@ const getAll = async (request, response) => {
             model: Company,
           },
         ],
+        filter:[`companyId=${companyId}`]
       })
     );
   } catch (error) {
@@ -37,7 +43,15 @@ const getById = async (request, response) => {
 
 const create = async (request, response) => {
   try {
-    const result = await Category.create({ ...request.body });
+    const {
+      body:{
+        title
+      },
+      authUser : {
+        companyId
+      }
+    } = request
+    const result = await Category.create({ title,companyId  });
     response.send(result);
   } catch (error) {
     response.status(500).send("Server error");
@@ -62,7 +76,6 @@ const update = async (request, response) => {
 const destroy = async (request, response) => {
   try {
     const { id } = request.params;
-    console.log(id);
     await Category.destroy({ where: { id: parseInt(id) } });
     response.sendStatus(200);
   } catch (error) {

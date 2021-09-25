@@ -1,12 +1,13 @@
 const router = require("express").Router();
 
 const Table = require("./../controller/Table");
+const AuthMiddleware = require("./../middleware/Auth");
 
-router.get("/", Table.getAll);
+router.get("/", AuthMiddleware, Table.getAll);
 
 router.get("/:id", Table.getById);
 
-router.post("/", Table.create);
+router.post("/", AuthMiddleware, Table.create);
 
 router.put("/:id", Table.update);
 

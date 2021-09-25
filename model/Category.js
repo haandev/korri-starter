@@ -1,6 +1,7 @@
 const { sequelize, DataTypes } = require("./../init-connection");
 
 const Company = require("./Company");
+const CategoryLocale = require("./CategoryLocale");
 
 const Category = sequelize.define("category", {
   id: {
@@ -9,13 +10,13 @@ const Category = sequelize.define("category", {
     allowNull: false,
     primaryKey: true,
   },
-  category: {
+  title: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
   image: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   o: {
     type: DataTypes.INTEGER,
@@ -24,4 +25,6 @@ const Category = sequelize.define("category", {
 });
 
 Category.belongsTo(Company);
+Category.hasMany(CategoryLocale);
+
 module.exports = Category;

@@ -1,5 +1,8 @@
 const express = require("express");
+
 const cors = require("cors");
+const cookieParser = require('cookie-parser')
+
 const asciify = require("asciify");
 
 const { connect, sync } = require("./init-connection");
@@ -7,6 +10,8 @@ const { connect, sync } = require("./init-connection");
 const app = express();
 
 app.use(cors());
+app.use(cookieParser())
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

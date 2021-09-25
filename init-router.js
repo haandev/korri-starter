@@ -3,7 +3,7 @@ const { toKebabCase } = require("./utils");
 
 const RoutersLoader = (app) => {
   const Routers = {};
-  fs.readdirSync("./router/").forEach((fileName) => {
+  fs.readdirSync("router/").forEach((fileName) => {
     Routers[toKebabCase(fileName.split(".")[0])] = require("./router/" +
       fileName);
     app.use(

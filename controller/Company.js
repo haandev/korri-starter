@@ -45,7 +45,6 @@ const update = async (request, response) => {
 const destroy = async (request, response) => {
   try {
     const { id } = request.params;
-    console.log(id);
     await Company.destroy({ where: { id: parseInt(id) } });
     response.sendStatus(200);
   } catch (error) {
