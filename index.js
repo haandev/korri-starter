@@ -32,7 +32,7 @@ app.use(express.json());
       console.log(res);
       console.log(
         `\nWelcome to Yunniq API 0.0.1! Listening on port ${process.env.APP_PORT}` +
-          `\nhttp://localhost:${process.env.APP_PORT}` +
+          `\nhttp://${process.env.APP_HOST}:${process.env.APP_PORT}` +
           `\nRunning on environment: ${process.env.NODE_ENV}`
       );
     });
