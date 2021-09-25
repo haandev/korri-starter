@@ -4,11 +4,13 @@ const cors = require("cors");
 const cookieParser = require('cookie-parser')
 
 const asciify = require("asciify");
+const morgan = require("morgan");
 
 const { connect, sync } = require("./init-connection");
 
 const app = express();
 
+app.use(morgan("dev"));
 app.use(cors());
 app.use(cookieParser())
 
