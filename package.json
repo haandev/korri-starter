@@ -5,8 +5,7 @@
   "repository": "https://github.com/haandev/korri-starter.git",
   "author": "haandev",
   "scripts": {
-    "start:server": "node index.js",
-    "start": "nodemon -r dotenv/config index.js",
+    "start": "node -r dotenv/config index.js",
     "dev": "nodemon -r dotenv/config index.js dotenv_config_path=.env.development"
   },
   "license": "MIT",
