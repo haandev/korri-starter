@@ -15,7 +15,7 @@ const getAll = async (request, response) => {
             model: Company,
           },
         ],
-        filter:[`companyId=${companyId}`]
+        where: {companyId}
       })
     );
   } catch (error) {
