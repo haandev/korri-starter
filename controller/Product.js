@@ -1,10 +1,22 @@
 const Product = require("./../model/Product");
+const Category = require("./../model/Category");
 
 const getAll = async (request, response) => {
   try {
+    const {
+      authUser : {
+        companyId
+      }
+    } = request
     response.send(
       await Product.findAll({
-        include: [{ all: true, nested: true }],
+        include: [{
+          model: Category,
+          attributes: ['categoryId','title'],
+          where: {
+            companyId
+          }
+        }]
       })
     );
   } catch (error) {

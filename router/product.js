@@ -3,7 +3,7 @@ const router = require("express").Router();
 const AuthMiddleware = require("./../middleware/Auth");
 const Product = require("./../controller/Product");
 
-router.get("/", Product.getAll);
+router.get("/", AuthMiddleware, Product.getAll);
 
 router.get("/:id", Product.getById);
 
