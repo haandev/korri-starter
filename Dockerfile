@@ -13,4 +13,4 @@ RUN yarn
 # Bundle app source
 COPY . .
 EXPOSE 3000
-CMD [ "node", "simple.js" ]
+CMD [ "yarn", "start" ]
