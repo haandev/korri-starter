@@ -27,8 +27,7 @@ app.get("/", function (request, response) {
 
 
   const port = process.env.PORT || 3000
-  const host = process.env.HOST || "localhost"
-  const server = app.listen(port ,host , () => {
+  const server = app.listen(port , () => {
     asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
       console.log(res);
       console.log(
