@@ -17,7 +17,9 @@ app.use(cookieParser())
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());*/
-
+app.get("/", function (request, response) {
+  response.send("Welcome to Yunniq API 0.0.1!");
+});
 (async () => {
 /*  await connect();
 
@@ -25,9 +27,7 @@ app.use(express.json());*/
   //require("./init-swagger")(app, routers);
   await sync();*/
 
-  app.get("/", function (request, response) {
-    response.send("Welcome to Yunniq API 0.0.1!");
-  });
+
   const port = process.env.PORT||3000
   const host = process.env.HOST || "localhost"
   const server = app.listen(port ,host , () => {
