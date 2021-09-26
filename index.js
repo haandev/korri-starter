@@ -36,11 +36,11 @@ app.get("/", function (request, response) {
 
 
   const options = {
-    key: fs.readFileSync('./private.key'),
-    cert: fs.readFileSync('./certificate.crt'),
+    key: fs.readFileSync('private.key'),
+    cert: fs.readFileSync('certificate.crt'),
   };
 
-  http.createServer(app).listen(80);
+  //http.createServer(app).listen(80);
   https.createServer(options, app).listen(443);
   console.log(
       `\nWelcome to Yunniq API 0.0.1! Listening on port 80 and 443` +
