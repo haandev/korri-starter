@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 
 const asciify = require("asciify");
 const morgan = require("morgan");
-console.log("environment",process.env)
 const { connect, sync } = require("./init-connection");
 
 const app = express();
