@@ -12,5 +12,5 @@ RUN yarn
 # RUN npm ci --only=production
 # Bundle app source
 COPY . .
-EXPOSE 3000
+EXPOSE 80 443
 CMD [ "yarn", "start" ]
