@@ -28,7 +28,7 @@ app.use(express.json());
   app.get("/", function (request, response) {
     response.send("Welcome to Yunniq API 0.0.1!");
   });
-
+console.log("environment",process.env)
   const server = app.listen(process.env.APP_PORT, () => {
     asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
       console.log(res);
