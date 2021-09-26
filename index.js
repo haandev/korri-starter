@@ -30,13 +30,13 @@ app.use(express.json());*/
   });
 
   const server = app.listen(process.env.APP_PORT||3000, process.env.APP_HOST || "localhost", () => {
-    asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
-      console.log(res);
+    // asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
+    //   console.log(res);
       console.log(
         `\nWelcome to Yunniq API 0.0.1! Listening on port ${process.env.APP_PORT}` +
           `\nhttp://${server.address().address}:${server.address().port}` +
           `\nRunning on environment: ${process.env.NODE_ENV}`
       );
-    });
+    // });
   });
 })();
