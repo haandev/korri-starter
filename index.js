@@ -28,12 +28,13 @@ app.use(express.json());*/
   app.get("/", function (request, response) {
     response.send("Welcome to Yunniq API 0.0.1!");
   });
-
-  const server = app.listen(process.env.PORT||3000, process.env.APP_HOST || "localhost", () => {
+  const port = process.env.PORT||3000
+  const host = process.env.HOST || "localhost"
+  const server = app.listen(port ,host , () => {
     // asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
     //   console.log(res);
       console.log(
-        `\nWelcome to Yunniq API 0.0.1! Listening on port ${process.env.APP_PORT}` +
+        `\nWelcome to Yunniq API 0.0.1! Listening on port ${server.address().port}` +
           `\nhttp://${server.address().address}:${server.address().port}` +
           `\nRunning on environment: ${process.env.NODE_ENV}`
       );
