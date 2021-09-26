@@ -29,7 +29,7 @@ app.use(express.json());*/
     response.send("Welcome to Yunniq API 0.0.1!");
   });
 
-  const server = app.listen(process.env.APP_PORT||3000, process.env.APP_HOST || "localhost", () => {
+  const server = app.listen(process.env.PORT||3000, process.env.APP_HOST || "localhost", () => {
     // asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
     //   console.log(res);
       console.log(
