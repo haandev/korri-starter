@@ -15,6 +15,8 @@ for eg.:
 -jwt and middleware support  
 -mysql support with sequelize  
 -model,controller,router,middleware abstraction  
+-docker
+-ssl support
 
 roadmap: 
 api version, path prefix  
@@ -22,7 +24,6 @@ case conversion middleware
 typescript support  
 webpack, bundle  
 mysql admin ui  
-https, ssl support  
 vhost, subdomain support  
 automatic swagger generation  
 clean documentation  
