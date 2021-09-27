@@ -13,7 +13,7 @@ const ProductLocale = sequelize.define("productLocale", {
   },
   description: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: true,
   },
   locale: {
     type: DataTypes.TEXT,

@@ -3,6 +3,7 @@ const router = require("express").Router();
 const ProductLocale = require("./../controller/ProductLocale");
 
 router.get("/", ProductLocale.getAll);
+router.get("/product/:productId", ProductLocale.getAllByProduct);
 
 router.get("/:id", ProductLocale.getById);
 

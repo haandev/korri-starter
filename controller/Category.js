@@ -15,7 +15,8 @@ const getAll = async (request, response) => {
             model: Company,
           },
         ],
-        where: {companyId}
+        where: {companyId},
+        order: ["o"]
       })
     );
   } catch (error) {

@@ -8,6 +8,19 @@ const getAll = async (request, response) => {
   }
 };
 
+const getAllByProduct = async (request, response) => {
+  const { productId } = request.params;
+  try {
+    response.send(await ProductLocale.findAll({
+      where : {
+        productId
+      }
+    }));
+  } catch (error) {
+    response.status(500).send("Server error");
+  }
+};
+
 const getById = async (request, response) => {
   try {
     const { id } = request.params;
@@ -55,4 +68,4 @@ const destroy = async (request, response) => {
   }
 };
 
-module.exports = { getAll, getById, create, update, destroy };
+module.exports = { getAll, getById, create, update, destroy, getAllByProduct };

@@ -15,8 +15,8 @@ const sequelize = new Sequelize({
     underscored: true,
     timestamps: true,
   },
-  logQueryParameters: false,
-  logging: false,
+  logQueryParameters: (process.env.NODE_ENV==="development"),
+  logging: (process.env.NODE_ENV==="development") ? console.log : false,
 });
 const connect = async () => {
   try {

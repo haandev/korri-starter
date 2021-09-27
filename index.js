@@ -11,8 +11,8 @@ const fs = require("fs");
 const { connect, sync } = require("./init-connection");
 
 const app = express();
-app.use(morgan("dev"));
 app.use(cors());
+app.use(morgan("combined"));
 app.use(cookieParser())
 
 
@@ -29,7 +29,7 @@ app.get("/", function (request, response) {
   await sync();
 
 
-  asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
+  await  asciify("Korri", { font: "epic", color: "green" }, function (err, res) {
     console.log(res);
   });
 
@@ -39,12 +39,21 @@ app.get("/", function (request, response) {
     key: fs.readFileSync('private.key'),
     cert: fs.readFileSync('certificate.crt'),
   };
+  if (process.env.NODE_ENV === "development"){
+    http.createServer(app).listen(process.env.PORT);
+    console.log(
+        `\nWelcome to Yunniq API 0.0.1! Listening on port ${process.env.PORT}` +
+        `\nRunning on environment: ${process.env.NODE_ENV}`
+    );
+  }
+  else {
+    http.createServer(app).listen(80);
+    https.createServer(options, app).listen(443);
+    console.log(
+        `\nWelcome to Yunniq API 0.0.1! Listening on port 80 and 443` +
+        `\nRunning on environment: ${process.env.NODE_ENV}`
+    );
+  }
 
-  //http.createServer(app).listen(80);
-  https.createServer(options, app).listen(443);
-  console.log(
-      `\nWelcome to Yunniq API 0.0.1! Listening on port 80 and 443` +
-      `\nRunning on environment: ${process.env.NODE_ENV}`
-  );
 
 })();

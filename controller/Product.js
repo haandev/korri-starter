@@ -1,4 +1,5 @@
 const Product = require("./../model/Product");
+const ProductLocale = require("./../model/ProductLocale");
 const Category = require("./../model/Category");
 
 const getAll = async (request, response) => {
@@ -12,11 +13,14 @@ const getAll = async (request, response) => {
       await Product.findAll({
         include: [{
           model: Category,
-          attributes: ['categoryId','title'],
+          attributes: ['companyId','title'],
           where: {
             companyId
           }
-        }]
+        },
+          {
+            model: ProductLocale,
+          }]
       })
     );
   } catch (error) {
