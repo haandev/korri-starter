@@ -7,7 +7,7 @@ const RoutersLoader = (app) => {
     Routers[toKebabCase(fileName.split(".")[0])] = require("./router/" +
       fileName);
     app.use(
-      `/${toKebabCase(fileName.split(".")[0])}`,
+      `/api/${toKebabCase(fileName.split(".")[0])}`,
       Routers[toKebabCase(fileName.split(".")[0])]
     );
   });
